@@ -19,7 +19,7 @@
                 <a href="">Dashboard</a>
             </li>
             <li class="px-2">
-                <a href="">Posts</a>
+                <a href="posts">Posts</a>
             </li>
         </ul>
 
@@ -31,7 +31,7 @@
                 <a href="">Login</a>
             </li>
             <li class="px-2">
-                <a href="">Register</a>
+                <a href={{ route('register') }}>Register</a>
             </li>
             <li class="px-2">
                 <a href="">Logout</a>
