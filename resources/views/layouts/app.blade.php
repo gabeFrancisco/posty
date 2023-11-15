@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-slate-100">
-    <nav class="p-5 bg-cyan-500 text-white flex flex-row justify-between shadow-md">
+    <nav class="p-5 bg-cyan-600 text-white flex flex-row justify-between shadow-md">
         <ul class="flex flex-row">
             <li class="px-2">
                 <a href="">Home</a>
