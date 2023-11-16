@@ -16,7 +16,7 @@
                 <a href="">Home</a>
             </li>
             <li class="px-2">
-                <a href="">Dashboard</a>
+                <a href={{ route('dashboard') }}>Dashboard</a>
             </li>
             <li class="px-2">
                 <a href="posts">Posts</a>
@@ -24,18 +24,24 @@
         </ul>
 
         <ul class="flex flex-row">
-            <li class="px-2 font-bold">
-                <a href="">@@gabeFrank</a>
-            </li>
-            <li class="px-2">
-                <a href="">Login</a>
-            </li>
-            <li class="px-2">
-                <a href={{ route('register') }}>Register</a>
-            </li>
-            <li class="px-2">
-                <a href="">Logout</a>
-            </li>
+            @if (auth()->user())
+                <li class="px-2 font-bold">
+                    <a href="">{{ auth()->user()->username }}</a>
+                </li>
+                <li class="px-2">
+                    <a href="">Logout</a>
+                </li>
+            @else
+                <li class="px-2">
+                    <a href="">Login</a>
+                </li>
+                <li class="px-2">
+                    <a href={{ route('register') }}>Register</a>
+                </li>
+            @endif
+
+
+
         </ul>
     </nav>
     <div class="px-16 py-10">
