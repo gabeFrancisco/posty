@@ -33,7 +33,7 @@
                 </li>
             @else
                 <li class="px-2">
-                    <a href="">Login</a>
+                    <a href={{ route('login') }}>Login</a>
                 </li>
                 <li class="px-2">
                     <a href={{ route('register') }}>Register</a>
