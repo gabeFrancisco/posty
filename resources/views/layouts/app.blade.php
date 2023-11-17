@@ -29,7 +29,9 @@
                     <a href="">{{ auth()->user()->username }}</a>
                 </li>
                 <li class="px-2">
-                    <a href="">Logout</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        <button>Logout</button>
+                    </form>
                 </li>
             @else
                 <li class="px-2">

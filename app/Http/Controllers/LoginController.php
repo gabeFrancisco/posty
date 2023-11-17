@@ -19,7 +19,15 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        auth()->attempt($request->only('username','password'));
+        if(auth()->attempt($request->only('username','password'))){
+            return redirect()->route('dashboard');
+        }
+        return back()->with('status', 'Invalid login credentials!');
+    }
+
+    public function logout(Request $request){
+        auth()->logout();
+
         return redirect()->route('dashboard');
     }
 }
