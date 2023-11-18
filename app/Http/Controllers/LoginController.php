@@ -12,14 +12,13 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {   
-
         // dd($request->all());
         $this->validate($request, [
             'username' => 'required|max:255',
             'password' => 'required'
         ]);
 
-        if(auth()->attempt($request->only('username','password'))){
+        if(auth()->attempt($request->only('username','password'), $request->remember)) {
             return redirect()->route('dashboard');
         }
         return back()->with('status', 'Invalid login credentials!');

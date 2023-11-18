@@ -13,7 +13,7 @@
     <nav class="p-5 bg-cyan-600 text-white flex flex-row justify-between shadow-md">
         <ul class="flex flex-row">
             <li class="px-2">
-                <a href="">Home</a>
+                <a href={{  route('home') }}>Home</a>
             </li>
             <li class="px-2">
                 <a href={{ route('dashboard') }}>Dashboard</a>
@@ -29,7 +29,7 @@
                     <a href="">{{ auth()->user()->username }}</a>
                 </li>
                 <li class="px-2">
-                    <form action="{{ route('logout') }}" method="post">
+                    <form action="{{ route('logout') }}">
                         <button>Logout</button>
                     </form>
                 </li>

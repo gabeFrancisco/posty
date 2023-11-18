@@ -16,14 +16,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class,'login'])->name('login');
-Route::post('/logout', [LoginController::class,'logout'])->name('logout');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class,'store'])->name('register');
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
 Route::get('/posts', function () {
     return view('posts.index');
