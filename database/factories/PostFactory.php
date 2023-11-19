@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostFactory extends Factory
 {
+    // protected $model = Post::class;
     /**
      * Define the model's default state.
      *
@@ -14,7 +15,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'body' => $this->faker->sentence(20),
         ];
     }
 }
