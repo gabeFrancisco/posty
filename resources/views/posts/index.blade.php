@@ -33,13 +33,13 @@
                         <div class="flex items-center mb-1">
                             <span class="text-gray-600 text-sm mx-2">{{ $post->likes->count() }}</span>
                             <span class="text-gray-400">|</span>
-                            @csrf
-                            <form action="" method="post" class="mx-1">
+                            <form action="{{ route('posts.likes', $post->id) }}" method="post" class="mx-1">
+                                @csrf
                                 <button type="submit" class="text-cyan-700 text-sm hover:underline">Like</button>
                             </form>
-                            @csrf
                             <span class="text-gray-400">|</span>
                             <form action="" method="post" class="mx-1">
+                                @csrf
                                 <button type="submit" class="text-red-500 text-sm hover:underline">Unlike</button>
                             </form>
                             

@@ -32,3 +32,4 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register')
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::post('/posts', [PostController::class, 'store'])->name('posts');
+Route::post('/posts/{post}/likes', [PostController::class,'like'])->name('posts.likes');
