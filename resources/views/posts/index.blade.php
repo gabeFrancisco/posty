@@ -25,19 +25,24 @@
 
             @if ($posts->count())
                 @foreach ($posts->reverse() as $post)
-                    <div class="my-4 border-b rounded ">
-                        <a href="" class="text-cyan-700 hover:text-cyan-900">{{ $post->user->username }}</a> <span
+                    <div class="my-4 border-b border-gray-300 rounded ">
+                        <a href="" class="text-cyan-700 hover:text-cyan-900 text-sm">{{ $post->user->username }}</a> <span
                             class="text-sm p-2 text-gray-400">{{ $post->created_at->diffForHumans() }}</span>
                         <div class="text-sm p-2 text-gray-700">{{ $post->body }}</div>
 
                         <div class="flex items-center mb-1">
+                            <span class="text-gray-600 text-sm mx-2">{{ $post->likes->count() }}</span>
+                            <span class="text-gray-400">|</span>
+                            @csrf
                             <form action="" method="post" class="mx-1">
                                 <button type="submit" class="text-cyan-700 text-sm hover:underline">Like</button>
                             </form>
+                            @csrf
                             <span class="text-gray-400">|</span>
                             <form action="" method="post" class="mx-1">
                                 <button type="submit" class="text-red-500 text-sm hover:underline">Unlike</button>
                             </form>
+                            
                         </div>
                     </div>
                 @endforeach
